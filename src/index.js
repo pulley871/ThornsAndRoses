@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { ThornsAndRoses } from './components/ThornsAndRoses';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ThornsAndRoses />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
