@@ -5,14 +5,16 @@ import { RetailersContext } from "./RetailersProvider";
 
 export const RetailersList = () =>{
     const {retailers, FetchRetailers} = useContext(RetailersContext)
-
+    useEffect(()=>{
+        FetchRetailers()
+    },[])
     return (<> 
         {retailers.map(retail=>{
             return(<div>
-                        <h3>{retail.name}</h3>
-                        <p>{retail.address}</p>
-                        <RetailerFlowerList distId = {retail.distributorId} />
-                        <RetailersDistributorandNurserys distId = {retail.distributorId}/>
+                        <h3>{retail?.name}</h3>
+                        <p>{retail?.address}</p>
+                        <RetailerFlowerList distId = {retail?.distributorId} retailId = {retail?.id}/>
+                        <RetailersDistributorandNurserys distId = {retail?.distributorId} />
             </div>)
         })}
     </>)

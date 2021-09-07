@@ -28,7 +28,8 @@ export const RetailersDistributorandNurserys = ({distId}) =>{
         setNurseriesArr(arr)
     },[foundDistributor])
     return (<div>
-                <h5>{foundDistributor.name}'s Nurseries</h5>
+                <h4>Distributor and Nurseries</h4>
+                <h5>{foundDistributor?.name}'s Nurseries</h5>
                 <ul>
                     {nurseriesArr.map((nursery)=>{
                         return (<li>{nursery.name}</li>)
